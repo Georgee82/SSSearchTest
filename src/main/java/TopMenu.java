@@ -1,6 +1,7 @@
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selectors.byAttribute;
+import static com.codeborne.selenide.Selectors.byCssSelector;
 import static com.codeborne.selenide.Selenide.$;
 
 public class TopMenu {
@@ -9,7 +10,11 @@ public class TopMenu {
         if(Markup.languageSelector().getText().equals(language.getLanguage())){
             Markup.languageSelector().click();
         }
-    };
+    }
+
+    public void openFavoritesPage(){
+        Markup.favoritesPageLink().click();
+    }
 
     public void openSearchForm(){
         Markup.searchLink().click();
@@ -29,6 +34,6 @@ public class TopMenu {
             return topMenuTable().$$(byAttribute("class","a_menu")).get(2);
         }
 
-
+        static SelenideElement favoritesPageLink() { return topMenuTable().find(byCssSelector("a[href$='/favorites/']")); }
     }
 }

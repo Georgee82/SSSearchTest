@@ -1,12 +1,10 @@
 public enum Subheading {
 
-    SELLING("1"),
-    BUYING("2"),
-    DIFFERENT("5");
+    SELLING("1");
 
     private String type;
 
-    private Subheading(String type){
+    Subheading(String type){
         this.type = type;
     }
 
