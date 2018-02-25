@@ -1,7 +1,7 @@
 public enum Subheading {
 
-    BUYING("1"),
-    SELLING("2"),
+    SELLING("1"),
+    BUYING("2"),
     DIFFERENT("5");
 
     private String type;

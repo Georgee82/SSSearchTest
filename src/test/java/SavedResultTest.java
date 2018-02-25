@@ -9,6 +9,7 @@ public class SavedResultTest {
     private TopMenu topMenu = new TopMenu();
     private MainPage mainPage = new MainPage();
     private SearchForm searchForm = new SearchForm();
+    private SearchResultPage searchResultPage = new SearchResultPage();
 
     @BeforeClass
     public static void testSetUp(){
@@ -20,9 +21,12 @@ public class SavedResultTest {
         topMenu.selectLanguage(Language.RUSSIAN);
         mainPage.openElectronicsDepartment();
         topMenu.openSearchForm();
-        searchForm.searchFor("Компьютер");
         searchForm.setPriceRange("100","1500");
         searchForm.selectSubheading(Subheading.SELLING);
+        searchForm.searchFor("Компьютер");
+        searchForm.pressEnter();
+        searchResultPage.filterByPrice();
+        searchResultPage.selectDealType(DealType.SELL);
         Selenide.sleep(10000);
     }
 }

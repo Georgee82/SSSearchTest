@@ -1,4 +1,6 @@
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selenide.*;
@@ -16,6 +18,10 @@ public class SearchForm {
 
     public void selectSubheading(Subheading dealType){
         Markup.subheadingDropDown().selectOptionByValue(dealType.getType());
+    }
+
+    public void pressEnter(){
+        Selenide.actions().sendKeys(Keys.ENTER).build().perform();
     }
 
     private static class Markup {
