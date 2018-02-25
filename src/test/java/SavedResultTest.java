@@ -27,6 +27,9 @@ public class SavedResultTest {
         searchForm.pressEnter();
         searchResultPage.filterByPrice();
         searchResultPage.selectDealType(DealType.SELL);
+        searchResultPage.openExtendedSearch();
+        searchForm.setPriceRange("0","300");
+        searchForm.pressEnter();
         Selenide.sleep(10000);
     }
 }
