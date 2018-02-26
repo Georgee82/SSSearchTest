@@ -38,6 +38,7 @@ public class SavedResultTest {
         topMenu.openFavoritesPage();
         ElementsCollection selectedResultsList = new SavedElements().get();
         for (int i = 0; i <= selectedResultsList.size()-1; i++) {
+            //TODO Found a bug in this assert.(Random stale element exception). Need save only "id" , not the whole element
             favoritesPage.favoritesList().find(byAttribute("id",selectedResultsList.get(i).getAttribute("id"))).shouldBe(Condition.visible);
         }
     }
